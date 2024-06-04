@@ -42,7 +42,7 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')], $request->remember)) {
             $request->session()->regenerate();
 
-            return redirect()->route('posts.index');
+            return redirect()->route('posts.index', auth()->user()->username );
         }
 
         return back()->withErrors([
