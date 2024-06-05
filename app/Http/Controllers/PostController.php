@@ -22,4 +22,9 @@ class PostController extends Controller implements HasMiddleware
             'user' => $user
         ]);
     }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
 }
